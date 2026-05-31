@@ -1,0 +1,11 @@
+# Example ~/.gitconfig-lab — loaded only for repos under ~/lab/ (see ~/.gitconfig).
+# This overrides just the identity; everything else is inherited from ~/.gitconfig.
+
+[user]
+	name = your-lab-username
+	email = lab@example.com
+
+# If the lab account pushes over SSH with a dedicated key, select it here so the
+# right key is used automatically for repos under ~/lab/:
+# [core]
+#	sshCommand = ssh -i ~/.ssh/id_lab -o IdentitiesOnly=yes

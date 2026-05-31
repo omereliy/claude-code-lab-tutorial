@@ -1,0 +1,21 @@
+# Editor / IDE
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+
+# Local tooling (mkdocs preview venv created during authoring)
+.mkdocs-venv/
+.venv/
+
+# MkDocs build output
+site/
+_site/
+
+# Python
+__pycache__/
+*.py[cod]
+
+# Source archive — redundant now that the tree is flattened to repo root
+cc-workshop.zip

@@ -1,0 +1,8 @@
+# Optional ~/.gitconfig-personal — only needed if you'd rather keep the personal
+# identity in its own file instead of as the default block in ~/.gitconfig.
+# If you do this, set the default identity here and add a matching includeIf,
+# e.g. [includeIf "gitdir:~/personal/"] path = ~/.gitconfig-personal
+
+[user]
+	name = your-personal-username
+	email = personal@example.com

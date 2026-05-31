@@ -1,0 +1,16 @@
+# Example ~/.gitconfig with a directory-conditional second identity.
+# Replace names, emails, and paths with your own.
+
+[user]
+	name = your-personal-username
+	email = personal@example.com
+
+# Any repo under ~/lab/ commits with the lab identity from ~/.gitconfig-lab.
+# The trailing slash matters: it matches everything *under* the directory.
+[includeIf "gitdir:~/lab/"]
+	path = ~/.gitconfig-lab
+
+# Authentication is separate from identity. If you push over HTTPS, the GitHub
+# CLI credential helper supplies the token (run `gh auth status` to check):
+[credential "https://github.com"]
+	helper = !gh auth git-credential
