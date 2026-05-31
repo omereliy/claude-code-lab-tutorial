@@ -33,6 +33,16 @@ Learn to recognize these four by sight. Each looks fine on a glance, which is ex
 3. **Silent assumption.** You left a gap in the spec; Claude filled it with a guess and didn't tell you. "What happens on an empty input?" — it picked something. The danger isn't the guess; it's the silence. You don't know a decision was made.
 4. **Test-that-passes-but-doesn't-test-the-thing.** (You met this in Module 3.) The test is green and asserts nothing meaningful — `assert result is not None`, or it re-derives the expected value with the same buggy logic. Green light, no signal.
 
+One concrete instance, so "plausible-but-wrong" isn't just a label. Ask Claude for a predicate-arity check — the number of arguments a predicate takes — and you might get:
+
+```python
+def arity(predicate_tokens):
+    # predicate_tokens = ["on", "a", "b"] for "(on a b)"
+    return len(predicate_tokens)   # plausible, and wrong: "on" has arity 2, not 3
+```
+
+It reads fine, runs fine, and is off by one on every predicate, because the name token isn't an argument (it should be `len(predicate_tokens) - 1`). Nothing crashes; every downstream arity comparison is quietly wrong. *(This snippet is illustrative. The graded hunt uses a real bug — see the exercise.)*
+
 What these share: they all pass a casual read. The defense is never a casual read.
 
 ## Review patterns

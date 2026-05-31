@@ -19,7 +19,7 @@ The task: replace a compiled validator (the VAL binary) with a pure-Python equiv
 
 What to draw from it:
 
-- **`CLAUDE.md` evolved.** It started near-empty and grew toward v1.0 as conventions became real. The Module 2 lesson, lived: you write what's true now and update it when reality changes, not a wishlist up front.
+- **`CLAUDE.md` evolved.** It started small and was expanded, then trimmed, as conventions became real — the history even includes a commit that deletes stale sections. The Module 2 lesson, lived: you write what's true now and update it when reality changes, not a wishlist up front.
 - **Where Claude helped:** boilerplate (parsing scaffolding, the test harness) and *edge-case discovery* — "what inputs break this?" is something Claude is genuinely good at enumerating, and validators live or die on edge cases.
 - **Where Claude was useless:** deciding the **public API**. What the package exports, what the function signatures should be, what's stable vs. internal — that's a taste-and-judgment call (Module 0's "success criterion is taste" category). Claude will produce *an* API, confidently; whether it's a *good* one was a human decision.
 
@@ -32,7 +32,7 @@ The shape of the lesson: Claude did the bounded, checkable parts well and the un
 The lesson here is *decomposition*: why a body of work split into several skills rather than one. The current structure is a marketplace of plugins (PDDL solving, validation, parsing, authoring), and within authoring, the work splits along the line Module 4 drew:
 
 - **Authoring** a PDDL draft from a description — definition of done: it parses and validates.
-- **Fixing** a draft that doesn't behave as described — definition of done is heavier: parse → validate → solve → validate the plan → check the trajectory against explicit intent scenarios, escalating to a human after a bounded number of iterations.
+- **Fixing** a draft that doesn't behave as described — definition of done is heavier: parse → validate → solve → validate the plan → check the trajectory against explicit intent scenarios, escalating to a human after five iterations without convergence rather than looping forever.
 
 Same domain, two **different invocation contexts** and two **different verification surfaces**. That divergence — distinct trigger, distinct definition of done — is the signal to split rather than overload one skill. Each skill also declares the specific tools it may call, which is what makes its verification surface concrete rather than aspirational.
 
@@ -80,7 +80,7 @@ Where Claude Code fits: writing the `sbatch` plumbing, summarizing long run logs
 
 ## Case Study D — Bring Your Own Repo (BYOR)
 
-**This is the one that makes the course pay off for you**, especially if you work in RL, DRL, MARL, or heuristic search rather than planning. The PDDL case studies are adjacent to your work but not *your* work; BYOR is.
+**For students from adjacent fields — RL, DRL, MARL, heuristic search — this is the case study that matters**, because it runs the techniques on your work instead of someone else's. The PDDL case studies are adjacent to your research but not *your* research; BYOR is.
 
 Take your own research repo and run the full pipeline on it:
 
