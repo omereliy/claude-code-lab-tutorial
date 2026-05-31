@@ -7,13 +7,13 @@
 
 ## The one claim this course makes
 
-Claude Code is a research tool with a definite shape. It is not magic, and it is not a chat window that can see your code. Used inside its shape, it saves you a week. Used outside it, it quietly wastes an afternoon and hands you plausible-looking work you then have to debug. This course is about the shape: where the tool fits, where it doesn't, and how to tell the difference before you've burned the afternoon.
+Claude Code is a research tool with a definite shape. It is not magic, not a chat window that can see your code. Used inside its shape, it saves you a week. Used outside it, it wastes an afternoon and hands you plausible-looking work you then have to debug. This course is about that shape: where the tool fits, where it doesn't, and how to tell which case you're in.
 
 If you came in skeptical, good. The fastest way to distrust a tool permanently is to be oversold on it once.
 
 ## What Claude Code is
 
-A terminal-native agent. You run `claude` in a repo and it gets tool access to your filesystem and shell — it can read and edit files, run commands, grep, run your tests, and (optionally) reach external tools over MCP. It works by running a loop: **read** the relevant files, **plan** a sequence of changes, **act** by editing and running things, **verify** by testing and re-reading. Module 1 has you run that loop end-to-end; for now, just hold the shape.
+A terminal-native agent. You run `claude` in a repo and it gets tool access to your filesystem and shell — it can read and edit files, run commands, grep, run your tests, and (optionally) reach external tools over MCP. It works by running a loop: **read** the relevant files, **plan** a sequence of changes, **act** by editing and running things, **verify** by testing and re-reading. Module 1 has you run that loop end-to-end.
 
 The consequences of "terminal-native agent" are the whole point:
 
@@ -31,7 +31,7 @@ Three tools get confused with Claude Code. They are not interchangeable:
 
 ## Where it shines
 
-Concrete tasks where Claude Code reliably earns its keep:
+Tasks where Claude Code reliably earns its keep:
 
 - **Long-running work across many files.** A rename that ripples through a package. Threading a new argument through a call chain.
 - **Repetitive refactors.** The kind that are mechanical but too numerous to do by hand without errors.
@@ -56,7 +56,7 @@ The principle to carry through the whole course, introduced here and given teeth
 
 **If your name is on the paper, the code is yours — regardless of who typed it.**
 
-A reviewer will not accept "Claude wrote that part" as a defense of a wrong result. You cannot delegate accountability to a tool. This is not a reason to avoid Claude Code; it's a reason to read what it produces. The researchers who get burned are the ones who treated "it ran and the tests passed" as "it's correct." Those are different claims, and Module 5 is about the gap between them.
+A reviewer will not accept "Claude wrote that part" as a defense of a wrong result; you cannot delegate accountability to a tool. This is not a reason to avoid Claude Code; it's a reason to read what it produces. The researchers who get burned are the ones who treated "it ran and the tests passed" as "it's correct." Those are different claims, and Module 5 is about the gap between them.
 
 !!! note "For RL, DRL, MARL, and heuristic-search students"
     The exercises in this course lean PDDL-flavored, because that's where the
