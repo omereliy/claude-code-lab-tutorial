@@ -35,8 +35,11 @@ argument-hint: <path-to-domain.pddl>
 Validate the PDDL domain at `$ARGUMENTS`.
 
 1. Run the validator on that path. In this exercise it's the stub:
-   `python validate_stub.py $ARGUMENTS`. Substitute the real validator if it's
-   installed — `pddl-pyvalidator` ships a `pyval` CLI (`pyval $ARGUMENTS`).
+   `python validate_stub.py $ARGUMENTS`. (Note: `pddl-pyvalidator` ships a
+   `pyval` CLI, but its signature is `pyval <domain> <problem>` — it validates a
+   plan/problem against a domain, not a domain alone, so it isn't a drop-in for
+   this domain-only command. The stub is the right fixture here; check
+   `pyval --help` if you want to wire up the real tool for a different command.)
 2. Read the raw output, then produce a SUMMARY, not a dump:
    - Group findings by category: syntax, undeclared predicate, predicate arity,
      type-hierarchy.
