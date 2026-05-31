@@ -107,6 +107,42 @@ mirrored here so none get lost between batches.
   real public repo. A pip-install fallback is documented so the exercise still
   works meanwhile. New item, not previously in this file.
 
+### Batch 2 (Modules 3–4)
+
+- **`docs/module-03-workflows.md`** — two `OMER REVIEW`s: (a) SLURM section can't
+  verify BGU cluster specifics (partition/account/QOS); (b) Ollama section left
+  deliberately short with no asserted VRAM/hostname. Fill in real cluster + Ollama
+  details, or point at the cluster's own docs.
+- **`exercises/m03-tdd-loop/README.md`** — `OMER REVIEW`: which PyValidator
+  function students delete is pending your pick (maps to item 4 above). The
+  predicate-arity check is the working candidate; confirm it has a clean red test
+  and fill in the exact path, or name a replacement.
+- **`exercises/m03-tdd-loop/example.sbatch`** — `OMER REVIEW`: `<PARTITION>` /
+  `<ACCOUNT>` / module-load lines are placeholders. Replace with real BGU values.
+- **`docs/module-04-slash-commands.md`** — `OMER REVIEW`: maps to item 2. The spec
+  named pddl-copilot as an `induce/instantiate/orchestrate` triad + six-compartment
+  vocabulary; the repo today is a 4-plugin marketplace with no such skills. Page
+  teaches decomposition from the real `pddl-authoring`/`pddl-fixing` split. Confirm
+  whether the triad is history to mention or to drop, and whether to link the repo.
+
+### Batch 3 (Modules 5–6)
+
+- **`docs/module-05-failure-modes.md`** — `BLOCKED` (item 1): the primary bug-hunt
+  exercise needs your real bug diff. Page + exercise ship a fallback (review a
+  public PR with the checklist) until it lands. Also `OMER REVIEW` (item 6): the
+  AI-disclosure policy admonition is a placeholder — state the real lab/BGU policy
+  or confirm none exists. Do not invent one.
+- **`exercises/m05-bug-hunt/README.md`** — `BLOCKED` (item 1): add `bug-diff.patch`
+  + `context.md` (sensitive content stripped). `review-checklist.md` is complete
+  and unblocked.
+- **`docs/module-06-case-studies.md`** — two `OMER REVIEW`s, both mapping to item 2
+  (repo privacy). Case B (pddl-copilot) and Case C (pddl-copilot-experiments) have
+  conditional public/fork/private blocks. NOTE: I read both repos to ground the
+  lessons but deliberately did NOT transcribe unpublished internals (sweep names,
+  checkpoint dates, results) into this public page — Case C carries in-flight
+  research. Decide public / stripped-fork / private per repo, then fill in
+  concretely. Same induce/instantiate/orchestrate-vs-marketplace note as Batch 2.
+
 ## How to resolve
 
 Strike items as you complete them. When all "high priority" items are resolved,
