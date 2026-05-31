@@ -13,16 +13,16 @@ The frame is the one from Module 0, now with teeth: **Claude wrote it, you own i
 
 ## Cost vs. quality: effort is a decision
 
-Effort level (Module 1) is a dial, and the instinct to pin it to maximum is wrong. Maximum effort costs more and is slower, and most tasks don't need it. Match the dial to the task:
+Effort level (Module 1) is a dial, and the instinct to pin it to the top is wrong. Higher effort costs more and is slower, and most tasks don't need it. The persistent levels are `low`, `medium`, `high`, `xhigh` (set via `effortLevel` / `/effort`); `max` exists as a session-only setting for the rare case that warrants it. Match the dial to the task:
 
 | Task | Effort | Why |
 |------|--------|-----|
-| Rename a variable across files | minimum | Mechanical. Deep reasoning buys nothing. |
-| Write a test for a known behavior | low–medium | The behavior is specified; execution is the work. |
-| Refactor with behavior preserved | medium | Some judgment, bounded by existing tests. |
-| Reimplement an algorithm from a paper | maximum | Subtle, easy to get plausibly wrong. This is where reasoning pays. |
+| Rename a variable across files | `low` | Mechanical. Deep reasoning buys nothing. |
+| Write a test for a known behavior | `low`–`medium` | The behavior is specified; execution is the work. |
+| Refactor with behavior preserved | `medium`–`high` | Some judgment, bounded by existing tests. |
+| Reimplement an algorithm from a paper | `xhigh`/`max` | Subtle, easy to get plausibly wrong. This is where reasoning pays. |
 
-The trap is treating effort as "quality" rather than "reasoning depth for this task." A maxed-out model still produces plausible-but-wrong code; effort reduces the rate, it doesn't eliminate the category. Spend it where the failure would be expensive.
+The trap is treating effort as "quality" rather than "reasoning depth for this task." A top-effort model still produces plausible-but-wrong code; effort reduces the rate, it doesn't eliminate the category. Spend it where the failure would be expensive.
 
 ## The signature failure modes
 
@@ -81,7 +81,7 @@ The failure modes don't stop at the code — your review has its own:
 
 - **Review theater.** Skimming the diff, nodding, approving. A fast read of plausible-but-wrong code feels like review and catches nothing. If you didn't read the load-bearing lines deeply or run the thing, you didn't review it.
 - **Trusting the summary over the diff.** Claude's "I added input validation and updated the tests" is a claim. The diff is the evidence. Read the diff.
-- **Maxing effort as a substitute for review.** "I used maximum effort, so it's probably right." Effort lowers the error rate; it never removes the need to check.
+- **Maxing effort as a substitute for review.** "I used the highest effort, so it's probably right." Effort lowers the error rate; it never removes the need to check.
 - **Anchoring on Claude's explanation.** If you ask Claude "is this correct?" it will tend to defend its own code. Better: ask it to *find the bug* in its own diff, or review it yourself against the spec, not against Claude's narration.
 
 ## Exercise: find the planted bug
