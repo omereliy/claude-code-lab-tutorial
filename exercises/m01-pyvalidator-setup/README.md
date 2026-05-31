@@ -48,6 +48,12 @@ shows the right model and account.
    `test_edge.py` that imports from the installed module instead of editing the
    repo's own test suite. The learning is identical.
 
+   **Heads-up on names** (saves a confusing minute): the PyPI package is
+   `pddl-pyvalidator`, but it **imports as `pyval`** — `from pyval import
+   PDDLValidator`, not `import pddl_pyvalidator`. It also installs a `pyval`
+   command-line tool. If `import pddl_pyvalidator` fails, that's expected; use
+   `pyval`.
+
 2. **Read phase, made visible.** From the repo root, run `claude` and ask,
    verbatim:
 
