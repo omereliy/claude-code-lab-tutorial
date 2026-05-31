@@ -6,8 +6,11 @@ argument-hint: [<what to pass>, e.g. <path-to-log> or <run-id>]
 <!--
 BYOR slash-command template (Module 4). This is a single SKILL.md — ONE file.
 Do NOT add a scripts/ folder or extra files; that turns a slash command into a
-skill, which is not the BYOR task. Copy this directory into your repo at
-.claude/skills/<your-command-name>/SKILL.md and rename it.
+skill, which is not the BYOR task.
+
+This template lives under dot-claude/ (not .claude/) so it stays inert in the
+workshop repo. Copy it into YOUR repo as .claude/skills/<your-command-name>/SKILL.md
+-- i.e. rename dot-claude -> .claude and rename example-command to your command.
 
 The value of a slash command is the OUTPUT SHAPE it specifies, not that it runs
 a tool. Be specific about what Claude should produce.
