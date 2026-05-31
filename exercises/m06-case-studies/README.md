@@ -48,16 +48,22 @@ In `byor-template/`:
 
 ```
 byor-template/
-├── CLAUDE.md                              # skeleton — copy to your repo root, fill in
-├── WRITEUP.md                             # the deliverable — fill in as you go
-└── .claude/skills/example-command/SKILL.md  # slash-command template — one file, rename it
+├── CLAUDE.md                                   # skeleton — copy to your repo root, fill in
+├── WRITEUP.md                                  # the deliverable — fill in as you go
+└── dot-claude/skills/example-command/SKILL.md  # slash-command template — one file, rename it
 ```
+
+The template directory is named `dot-claude/`, not `.claude/`, on purpose — so
+it stays inert here and doesn't register as a live skill in this workshop repo.
+**Rename it to `.claude/` when you copy it into your own repo.**
 
 1. Copy `CLAUDE.md` to your repo root and fill it in (Module 2). Delete the
    bracketed prompts as you go; keep it short and true-now.
 2. Run one TDD loop (Module 3) on a small, real function.
-3. Copy `.claude/skills/example-command/` into your repo, rename it, and make it
-   one slash command you'll actually use (Module 4). **One file — no scripts.**
+3. Copy `dot-claude/skills/example-command/` into your repo **as
+   `.claude/skills/<your-command-name>/`** (rename `dot-claude` → `.claude` and
+   rename the skill folder), then make it one slash command you'll actually use
+   (Module 4). **One file — no scripts.**
 4. Review with `../m05-bug-hunt/review-checklist.md` (Module 5).
 5. Fill in `WRITEUP.md`. That's what you bring back.
 
