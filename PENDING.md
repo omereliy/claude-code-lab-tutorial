@@ -80,6 +80,18 @@ Module 0 teacher notes. Review the wording if you want it stronger/softer.
 If a live kickoff lecture is desired, set up Marp to generate slides from
 the same markdown. Don't dual-source the content.
 
+### 11. Confirm GitHub Pages is enabled for the deploy to work
+The repo tree was flattened so `mkdocs.yml` and `.github/workflows/deploy.yml`
+now sit at the repo root, where the workflow expects them — `mkdocs build
+--strict` passes locally and the workflow's `paths:`/build command match the new
+layout. Two things can't be verified from a local checkout and must be confirmed
+once in the GitHub UI:
+- **Settings -> Pages -> Source = "GitHub Actions"** must be enabled, or the
+  `deploy-pages@v4` step fails on first run.
+- Optional: bind the job to a `github-pages` environment (`environment:` block).
+  `deploy-pages` works without it; add only if you want the environment view.
+Verify by pushing a docs change and watching the Action go green + the site load.
+
 ## Inline markers placed during production
 
 Every `<!-- BLOCKED: -->` and `<!-- OMER REVIEW: -->` comment in the source is
@@ -101,6 +113,11 @@ mirrored here so none get lost between batches.
   `gitconfig-lab.example`); the `gh` credential helper is machine-wide and does
   *not* switch by directory, so it can't carry a true two-account HTTPS setup on
   its own. New item, not previously in this file.
+  - **Publish-consent sub-item:** the worked example uses the handle
+    `omere-auditale` (spec-sanctioned) paired with a *fabricated* `lab@example.com`
+    and `~/lab/` path. Since this deploys to a public site, confirm `omere-auditale`
+    is OK to publish as the example handle, or swap it for a generic placeholder
+    (e.g. `your-lab-username`). `omereliy` is already public (repo owner).
 - **`exercises/m01-pyvalidator-setup/README.md`** — `OMER REVIEW`: PyPI metadata
   for `pddl-pyvalidator` declares no source/home URL, so the public clone URL
   (`<PYVALIDATOR_REPO_URL>`) and repo directory name are placeholders. Fill in the
