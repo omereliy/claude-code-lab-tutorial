@@ -176,7 +176,7 @@ Claude Code can connect to **MCP servers** — external tools that expose extra 
 Full instructions and the shell-config templates are in `exercises/m01-pyvalidator-setup/`. In brief:
 
 1. Install Claude Code, authenticate, and set your persistent model/effort defaults (templates provided).
-2. Clone **PyValidator** (`pip install pddl-pyvalidator` — a pure-Python PDDL plan validator).
+2. Get **PyValidator** — a pure-Python PDDL plan validator (clone the repo, or `pip install pddl-pyvalidator`; the exercise README covers both).
 3. From the repo root, run `claude` and ask: *"What does this repo do? Where's the entry point?"* Read the answer — this is the **Read** phase made visible.
 4. Ask Claude to add **one** test for an edge case: an empty plan, a malformed action name, or a predicate with the wrong arity. Make it propose a plan first; only then let it write the test.
 5. Run `pytest`.
