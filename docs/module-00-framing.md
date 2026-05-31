@@ -26,29 +26,29 @@ The consequences of "terminal-native agent" are the whole point:
 Three tools get confused with Claude Code. They are not interchangeable:
 
 - **Not Cursor.** Cursor is editor-coupled: it lives in your IDE, optimized for a tight edit-and-review loop on code you're actively looking at. Claude Code lives in the terminal and is optimized for longer, multi-file, run-it-yourself tasks. If you've used Cursor heavily, this is the difference that will trip you up most — name it out loud.
-- **Not Copilot.** Copilot is autocomplete. It predicts the next few lines as you type. It is not agentic: it doesn't plan, run commands, or verify. Different job entirely.
-- **Not chat Claude.** The Claude website has no persistent workspace, no shell, no ability to run your tests. You paste code in and copy answers out. Claude Code *is* in your repo. The gap between "describe my code to an assistant" and "an assistant that has my code" is most of what this course is about.
+- **Not Copilot.** Copilot is autocomplete: it predicts the next few lines as you type. It is not agentic — it doesn't plan, run commands, or verify. Different job entirely.
+- **Not chat Claude.** The Claude website has no persistent workspace, no shell, no ability to run your tests. You paste code in and copy answers out. Claude Code *is* in your repo. The gap between "describe my code to an assistant" and "an assistant that has my code" is most of this course.
 
 ## Where it shines
 
 Tasks where Claude Code reliably earns its keep:
 
 - **Long-running work across many files.** A rename that ripples through a package. Threading a new argument through a call chain.
-- **Repetitive refactors.** The kind that are mechanical but too numerous to do by hand without errors.
+- **Repetitive refactors.** Mechanical, but too numerous to do by hand without errors.
 - **Reading an unfamiliar codebase.** "Where's the entry point, where do the tests live, what should I read first?" is a genuinely good first prompt in a repo you've never seen.
-- **Writing tests.** Especially edge cases you'd skip when bored.
+- **Writing tests.** Especially the edge cases you'd skip when bored.
 - **Running and interpreting experiments.** Driving a script, reading the logs, summarizing what happened — anything that benefits from having a real shell.
 
 ## Where it struggles
 
-This is the half of the picture most tutorials skip. Claude Code is weak, sometimes dangerously confident, on:
+The half of the picture most tutorials skip. Claude Code is weak, sometimes dangerously confident, on:
 
 - **Fuzzy specs.** "Make it better." "Optimize this." "Clean it up." With no success criterion, Claude guesses at what you meant and commits to the guess. The output looks like work and may be the wrong work.
 - **Tasks that need runtime state it can't observe.** A bug that only appears with a specific tensor shape on the GPU, or a race that shows up only under SLURM. Claude can't see what it can't run.
 - **Novel algorithm *design*.** Reimplementing a published algorithm from a clear description: good. Inventing a new heuristic or a new training scheme: that's research, and it's yours. Claude is a strong typing partner and a poor co-author of novel ideas.
 - **Anything where the success criterion is taste.** API design, what to name the public interface, whether an abstraction earns its keep. Claude will produce *a* answer, confidently. Whether it's a *good* one is your call.
 
-The pattern: Claude Code is strongest when the success criterion is explicit and checkable, and weakest when it isn't. Most of this course is techniques for making the criterion explicit — a `CLAUDE.md` (Module 2), a failing test (Module 3), a slash command with a fixed output shape (Module 4).
+The pattern: Claude Code is strongest when the success criterion is explicit and checkable, weakest when it isn't. Most of this course is techniques for making the criterion explicit — a `CLAUDE.md` (Module 2), a failing test (Module 3), a slash command with a fixed output shape (Module 4).
 
 ## "Claude wrote it, you own it"
 
@@ -70,12 +70,12 @@ A reviewer will not accept "Claude wrote that part" as a defense of a wrong resu
 
 ## Exercise: name the difference
 
-You'll watch two short screen recordings of Claude Code on the same project:
+You'll watch two short screen recordings on the same project:
 
 - **Recording A** — a structured task with a checkable goal. It goes well.
 - **Recording B** — a vague task with no clear success criterion. It flails.
 
-Before the instructor says anything, write down: **what's different about the two tasks** — not the two outputs, the two *tasks*. The point isn't that one worked; it's *why* one was set up to work and the other wasn't. That distinction is the entire course in miniature.
+Before the instructor says anything, write down **what's different about the two tasks** — not the outputs, the *tasks*. The point isn't that one worked; it's *why* one was set up to work and the other wasn't. That distinction is the entire course in miniature.
 
 <!-- BLOCKED: The two screen recordings (A: structured task succeeding in PyValidator; B: vague task flailing) must be produced by Omer. See PENDING.md item 3. Until they exist, run this as a live demo or describe both runs verbally. Format: asciinema preferred, mp4 acceptable. -->
 
@@ -88,7 +88,7 @@ Before the instructor says anything, write down: **what's different about the tw
 ## Recap
 
 - Claude Code is a terminal-native agent that runs a read → plan → act → verify loop with real shell access. It is not Cursor, not Copilot, not the chat website.
-- It shines when the success criterion is explicit and checkable; it struggles when it's fuzzy, unobservable, novel, or a matter of taste.
+- It shines when the success criterion is explicit and checkable; it struggles when it isn't.
 - Whatever it writes, you own. Read it.
 
 Next: Module 1 — install it, configure it, and run the loop once yourself.
