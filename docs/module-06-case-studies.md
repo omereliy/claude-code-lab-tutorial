@@ -70,12 +70,9 @@ This case study is about a problem every experimentalist has: code that changes 
 Where Claude Code fits: writing the `sbatch` plumbing, summarizing long run logs (Module 3), and — carefully — interpreting outputs. Where it doesn't: deciding *what* to measure and whether a result is real. Those are research judgments you own (Module 5).
 
 !!! warning "Conditional content — likely private"
-    <!-- OMER REVIEW: PENDING.md item 2. This repo contains unpublished research
-         (live sweeps, contamination-control data). I deliberately did NOT put
-         observed internals (specific sweep names, dates, checkpoints, results)
-         into this public page — only the generic, transferable conventions above.
-         Decide: stripped public fork that preserves the FOLDER CONVENTIONS without
-         the results/checkpoints, or keep private as a read-along. -->
+    <!-- OMER REVIEW: repo-privacy decision needed (Case C). The page keeps only
+         generic, transferable conventions — no repo internals. Full rationale and
+         the decision options are in PENDING.md (not part of the deployed site). -->
     **If a stripped fork exists:** it should preserve the folder conventions and
     harness structure while removing results, checkpoints, and unpublished data.
     **If private:** this is a discuss-in-class case study; the conventions above
